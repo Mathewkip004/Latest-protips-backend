@@ -1,0 +1,30 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+
+app:
+  frontend-return-url: ${APP_FRONTEND_RETURN_URL}
+  jwt-secret: ${APP_JWT_SECRET:my-local-dev-secret-123456789012345678901234567890}
+  jwt-expiration-ms: 86400000
+
+firebase:
+  database-url: ${FIREBASE_DATABASE_URL}
+
+paystack:
+  secret-key: ${PAYSTACK_SECRET_KEY}
+  base-url: ${PAYSTACK_BASE_URL:https://api.paystack.co}
